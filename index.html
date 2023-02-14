@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Color-Picker</title>
+</head>
+<body>
+    <div>
+        <canvas id="myCanvas-profile"></canvas>
+        <canvas id="myCanvas-name"></canvas>
+    </div>
+    <div>
+        <video id="video" src="./media/video.mp4" controls crossorigin="anonymous"></video>
+    </div>
+    
+
+    <script>
+        const canvas = document.getElementById("myCanvas-profile");
+        const context = canvas.getContext("2d");
+        var image = new Image();
+        image.src = "profile.jpg";
+        image.onload = function(){
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        }
+
+        var text = document.getElementById("myCanvas-name");
+        var textContext = text.getContext("2d");
+        textContext.fillStyle = "white";
+        textContext.font = "bold 18px Arial";
+        textContext.fillText("Hello World", (text.width/2) - 50,(text.height/2) + 8);
+
+
+        // Color Picker
+        
+        
+    </script>
+</body>
+</html>
